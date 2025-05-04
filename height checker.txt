@@ -1,0 +1,16 @@
+import java.util.Arrays;
+
+class Solution {
+    public int heightChecker(int[] heights) {
+        int[] expected = Arrays.copyOf(heights, heights.length); // ✅ Create a copy
+        Arrays.sort(expected); // ✅ Sort the copied array
+
+        int count = 0;
+        for (int i = 0; i < heights.length; i++) {
+            if (heights[i] != expected[i]) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
